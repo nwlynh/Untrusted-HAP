@@ -3,6 +3,8 @@
 **Category:** Crypto / constrained statistical post-processing
 **Difficulty:** 9/10
 
+**Flag format:** `BKSEC{...}`
+
 The HAP authenticated three calibration streams, but it committed each stream
 only as a multiset inside an epoch. The individual calibration records are not
 bound to the Bell round they were meant to calibrate.

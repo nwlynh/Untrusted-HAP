@@ -37,7 +37,7 @@ if (
 ):
     raise SystemExit("private binding does not match v7 artifact")
 
-FLAG = os.environ.get("FLAG", "flag{development_only}")
+FLAG = os.environ.get("FLAG", "BKSEC{development_only}")
 REJECT = {"ok": False, "error": "submission rejected"}
 
 

@@ -11,7 +11,7 @@ python3 organizer/generate_instance.py --seed 0x7a17
 python3 organizer/regression.py
 docker build -f deploy/Dockerfile -t untrusted-hap-hard-v7 .
 docker run --rm -p 5007:5007 \
-  -e FLAG='flag{...}' \
+  -e FLAG='BKSEC{...}' \
   -e BINDING_PATH=/run/secrets/untrusted_hap_v7_binding.json \
   -v "$PWD/organizer/release_binding.json:/run/secrets/untrusted_hap_v7_binding.json:ro" \
   untrusted-hap-hard-v7
