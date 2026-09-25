@@ -6,13 +6,17 @@ import json
 import os
 from pathlib import Path
 import socketserver
+import sys
 from typing import Any
 
-from common import N, bound, validate
-
-
 HERE = Path(__file__).resolve().parent
-INSTANCE = json.loads((HERE / "instance.json").read_text())
+CHALLENGE_DIR = Path(os.environ.get("CHALLENGE_DIR", str(HERE.parent / "challenge")))
+sys.path.insert(0, str(CHALLENGE_DIR))
+
+from common import N, bound, validate  # noqa: E402
+
+
+INSTANCE = json.loads((CHALLENGE_DIR / "instance.json").read_text())
 DEFAULT_BINDING = HERE.parent / "organizer" / "release_binding.json"
 BINDING_PATH = Path(os.environ.get("BINDING_PATH", str(DEFAULT_BINDING)))
 
